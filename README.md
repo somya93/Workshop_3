@@ -1,6 +1,6 @@
 # Workshop 3
 
-In this workshop, we'll be extending our previous project into an API.
+In this workshop, we will be using Flask and Flask-RESTful to write some APIs.
 
 Make sure to have these dependencies added to your project interpreter in PyCharm.
 
