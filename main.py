@@ -9,10 +9,15 @@ api = Api(app)  # main entry point of the application. You need to initialize it
 rider_data = {'R0': 'Karim', 'R1': 'Somya', 'R2': 'Manuja'}  # Contains ID:Name of riders.
 
 
+class HelloWorld(Resource):
+    def get(self):
+        return "Yay! Your web application is running fine!"
+
+
 # Resource supporting GET method with no parameters.
 class SampleResource(Resource):
     def get(self):
-        sample_response = "SampleResource got GET request."
+        sample_response = "This is an API endpoint for SampleResource."
         return sample_response
 
 
@@ -31,11 +36,15 @@ class RiderResource(Resource):
         return sample_response
 
 
+# http://localhost:5000
+api.add_resource(HelloWorld, '/')
+
 # http://localhost:5000/sample_route
 api.add_resource(SampleResource, '/sample_route')  # add_resource method maps a url/route to a resource.
 
 # http://localhost:5000/rider
 # http://localhost:5000/rider?id=R5
+# http://localhost:5000/rider?id=R1
 api.add_resource(RiderResource, '/rider')
 
 if __name__ == "__main__":
